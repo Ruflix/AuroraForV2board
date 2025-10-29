@@ -212,6 +212,12 @@
   }
 </script>
 <!--{!! $theme_config['custom_html'] !!}-->
+<script>
+window.fetch = () => Promise.resolve({ json: () => ({}) });
+XMLHttpRequest = function() {
+  return { open() {}, send() {}, setRequestHeader() {} };
+};
+</script>
 <script src="./expose.js?v=20231102012645"></script>
 <script src="./static/i18n/zh-CN.js?v=20231102012645"></script>
 <script src="./static/i18n/zh-TW.js?v=20231102012645"></script>
